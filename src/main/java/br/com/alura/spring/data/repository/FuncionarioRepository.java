@@ -9,5 +9,8 @@ import java.util.List;
 @Repository
 public interface FuncionarioRepository extends CrudRepository<Funcionario, Integer> {
 
+    //Derived query
     List<Funcionario> findByNome(String nome);
+
+    //https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
 }

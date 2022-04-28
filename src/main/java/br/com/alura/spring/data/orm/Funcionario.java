@@ -1,29 +1,35 @@
 package br.com.alura.spring.data.orm;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
-import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name = "funcionarios")
 public class Funcionario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String cpf;
     private Double salario;
-
     private LocalDate dataContratacao;
-
     @ManyToOne
     @JoinColumn(name = "cargo_id", nullable = false)
     private Cargo cargo;
-
     @Fetch(FetchMode.SELECT)
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "funcionarios_unidades", joinColumns = {
@@ -71,16 +77,16 @@ public class Funcionario {
         this.dataContratacao = dataContratacao;
     }
 
-    public List<UnidadeTrabalho> getUnidadeTrabalhos() {
-        return unidadeTrabalhos;
-    }
-
     public Cargo getCargo() {
         return cargo;
     }
 
     public void setCargo(Cargo cargo) {
         this.cargo = cargo;
+    }
+
+    public List<UnidadeTrabalho> getUnidadeTrabalhos() {
+        return unidadeTrabalhos;
     }
 
     public void setUnidadeTrabalhos(List<UnidadeTrabalho> unidadeTrabalhos) {

@@ -1,19 +1,20 @@
 package br.com.alura.spring.data.service;
 
-import br.com.alura.spring.data.orm.Cargo;
-import br.com.alura.spring.data.orm.Funcionario;
-import br.com.alura.spring.data.orm.UnidadeTrabalho;
-import br.com.alura.spring.data.repository.CargoRepository;
-import br.com.alura.spring.data.repository.FuncionarioRepository;
-import br.com.alura.spring.data.repository.UnidadeTrabalhoRepository;
-import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+
+import org.springframework.stereotype.Service;
+
+import br.com.alura.spring.data.orm.Cargo;
+import br.com.alura.spring.data.orm.Funcionario;
+import br.com.alura.spring.data.orm.UnidadeTrabalho;
+import br.com.alura.spring.data.repository.CargoRepository;
+import br.com.alura.spring.data.repository.FuncionarioRepository;
+import br.com.alura.spring.data.repository.UnidadeTrabalhoRepository;
 
 @Service
 public class CrudFuncionarioService {
@@ -26,29 +27,25 @@ public class CrudFuncionarioService {
     private final UnidadeTrabalhoRepository unidadeTrabalhoRepository;
 
 
-    public CrudFuncionarioService(CargoRepository cargoRepository, FuncionarioRepository funcionarioRepository, UnidadeTrabalhoRepository unidadeTrabalhoRepository) {
+    public CrudFuncionarioService(FuncionarioRepository funcionarioRepository,
+                                  CargoRepository cargoRepository, UnidadeTrabalhoRepository unidadeTrabalhoRepository) {
         this.cargoRepository = cargoRepository;
         this.funcionarioRepository = funcionarioRepository;
         this.unidadeTrabalhoRepository = unidadeTrabalhoRepository;
     }
 
-
     public void inicial(Scanner scanner) {
-
-
-        while (system) {
-
-            System.out.println("Qual acao de funcionario deseja executar");
-            System.out.println("0 - sair");
+        while(system) {
+            System.out.println("Qual acao de cargo deseja executar");
+            System.out.println("0 - Sair");
             System.out.println("1 - Salvar");
             System.out.println("2 - Atualizar");
             System.out.println("3 - Visualizar");
             System.out.println("4 - Deletar");
 
-            int acao = scanner.nextInt();
+            int action = scanner.nextInt();
 
-            switch (acao) {
-
+            switch (action) {
                 case 1:
                     salvar(scanner);
                     break;
@@ -68,8 +65,8 @@ public class CrudFuncionarioService {
 
         }
 
-
     }
+
     private void salvar(Scanner scanner) {
         System.out.println("Digite o nome");
         String nome = scanner.next();
@@ -121,20 +118,20 @@ public class CrudFuncionarioService {
     }
 
     private void atualizar(Scanner scanner) {
-        System.out.println("id");
+        System.out.println("Digite o id");
         Integer id = scanner.nextInt();
 
-        System.out.println("Digite seu nome");
+        System.out.println("Digite o nome");
         String nome = scanner.next();
 
-        System.out.println("Digite seu cpf");
+        System.out.println("Digite o cpf");
         String cpf = scanner.next();
 
         System.out.println("Digite o salario");
         Double salario = scanner.nextDouble();
 
-        System.out.println("Digite a data de contratacao");
-        String dataCOntratacao = scanner.next();
+        System.out.println("Digite a data de contracao");
+        String dataContratacao = scanner.next();
 
         System.out.println("Digite o cargoId");
         Integer cargoId = scanner.nextInt();
@@ -144,27 +141,24 @@ public class CrudFuncionarioService {
         funcionario.setNome(nome);
         funcionario.setCpf(cpf);
         funcionario.setSalario(salario);
-        funcionario.setDataContratacao(LocalDate.parse(dataCOntratacao, formatter));
-        Optional<Cargo> cargo = this.cargoRepository.findById(id);
+        funcionario.setDataContratacao(LocalDate.parse(dataContratacao, formatter));
+        Optional<Cargo> cargo = cargoRepository.findById(cargoId);
         funcionario.setCargo(cargo.get());
 
-        this.funcionarioRepository.save(funcionario);
+        funcionarioRepository.save(funcionario);
         System.out.println("Alterado");
-
-
     }
 
     private void visualizar() {
-        Iterable<Funcionario> visualizar = this.funcionarioRepository.findAll();
-        visualizar.forEach(f -> System.out.println(f));
+        Iterable<Funcionario> funcionarios = funcionarioRepository.findAll();
+        funcionarios.forEach(funcionario -> System.out.println(funcionario));
     }
 
     private void deletar(Scanner scanner) {
         System.out.println("Id");
         int id = scanner.nextInt();
-        this.funcionarioRepository.deleteById(id);
+        funcionarioRepository.deleteById(id);
         System.out.println("Deletado");
-
     }
 
 }

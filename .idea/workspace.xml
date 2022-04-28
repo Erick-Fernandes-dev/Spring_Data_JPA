@@ -5,13 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1151354-8fed-479e-ad29-addb331cdccb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/orm/Funcionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/orm/UnidadeTrabalho.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/repository/FuncionarioRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/repository/UnidadeTrabalhoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/CrudFuncionarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/CrudUnidadeTrabalhoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/RelatoriosService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01_servlet/.metadata/.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../01_servlet/.metadata/.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../01_servlet/.metadata/.mylyn/repositories.xml.zip" beforeDir="false" />
@@ -4860,13 +4853,22 @@
       <change beforePath="$PROJECT_DIR$/../05_persistenciaComJPA_IntroducaoComHibernate/target/classes/br/com/alura/modelo/Categoria.class" beforeDir="false" afterPath="$PROJECT_DIR$/../05_persistenciaComJPA_IntroducaoComHibernate/target/classes/br/com/alura/modelo/Categoria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../05_persistenciaComJPA_IntroducaoComHibernate/target/classes/br/com/alura/modelo/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../05_persistenciaComJPA_IntroducaoComHibernate/target/classes/br/com/alura/modelo/Produto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../05_persistenciaComJPA_IntroducaoComHibernate/target/classes/br/com/alura/testes/CadastroDeProduto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../05_persistenciaComJPA_IntroducaoComHibernate/target/classes/br/com/alura/testes/CadastroDeProduto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/SpringDataApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/SpringDataApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/orm/Cargo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/orm/Cargo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/orm/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/orm/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/orm/UnidadeTrabalho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/orm/UnidadeTrabalho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/repository/FuncionarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/repository/FuncionarioRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/CrudCargoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/CrudCargoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/CrudFuncionarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/CrudFuncionarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/CrudUnidadeTrabalhoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/CrudUnidadeTrabalhoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/RelatoriosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/spring/data/service/RelatoriosService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/SpringDataApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/SpringDataApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/orm/Cargo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/orm/Cargo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/orm/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/orm/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/orm/UnidadeTrabalho.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/orm/UnidadeTrabalho.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/service/CrudFuncionarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/service/CrudFuncionarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/service/RelatoriosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/alura/spring/data/service/RelatoriosService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4904,7 +4906,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SpringDataApplication">
+    <configuration name="RelatoriosService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.alura.spring.data.service.RelatoriosService" />
+      <module name="springData" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.alura.spring.data.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringDataApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.alura.spring.data.SpringDataApplication" />
       <module name="springData" />
@@ -4915,6 +4930,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.SpringDataApplication" />
+        <item itemvalue="Application.RelatoriosService" />
       </list>
     </recent_temporary>
   </component>
