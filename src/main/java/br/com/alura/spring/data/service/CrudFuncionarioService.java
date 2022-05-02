@@ -7,6 +7,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
+import jdk.swing.interop.SwingInterOpUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.com.alura.spring.data.orm.Cargo;
@@ -53,7 +58,7 @@ public class CrudFuncionarioService {
                     atualizar(scanner);
                     break;
                 case 3:
-                    visualizar();
+                    visualizar(scanner);
                     break;
                 case 4:
                     deletar(scanner);
@@ -149,9 +154,33 @@ public class CrudFuncionarioService {
         System.out.println("Alterado");
     }
 
-    private void visualizar() {
-        Iterable<Funcionario> funcionarios = funcionarioRepository.findAll();
+//    private void visualizar() {
+//        Iterable<Funcionario> funcionarios = funcionarioRepository.findAll();
+//        funcionarios.forEach(funcionario -> System.out.println(funcionario));
+//    }
+
+    //PAGINAÇÃO
+    private void visualizar(Scanner scanner) {
+
+        System.out.println("Qual pagina voce deseja visualizar");
+        Integer page = scanner.nextInt();
+
+        //SEM ORDENAÇÃO
+        //Pageable pageable = PageRequest.of(page, 5, Sort.unsorted());
+
+        //ordenar por nome de forma decrescente
+//        Pageable pageable = PageRequest.of(page, 5, Sort.by(Sort.Direction.DESC, "nome"));
+
+        //ordenar por nome de forma crescente
+        Pageable pageable = PageRequest.of(page, 5, Sort.by(Sort.Direction.ASC, "nome"));
+
+        Page<Funcionario> funcionarios = this.funcionarioRepository.findAll(pageable);
+
+        System.out.println(funcionarios);
+        System.out.println("Pagina atual: " + funcionarios.getNumber());//retorna qual a pagina que o cliente está visualizando
+        System.out.println("Total elemento " + funcionarios.getTotalElements());//pega o total de elementos em uma tabela
         funcionarios.forEach(funcionario -> System.out.println(funcionario));
+
     }
 
     private void deletar(Scanner scanner) {
@@ -160,5 +189,6 @@ public class CrudFuncionarioService {
         funcionarioRepository.deleteById(id);
         System.out.println("Deletado");
     }
+
 
 }
