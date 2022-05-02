@@ -1,9 +1,6 @@
 package br.com.alura.spring.data;
 
-import br.com.alura.spring.data.service.CrudCargoService;
-import br.com.alura.spring.data.service.CrudFuncionarioService;
-import br.com.alura.spring.data.service.CrudUnidadeTrabalhoService;
-import br.com.alura.spring.data.service.RelatoriosService;
+import br.com.alura.spring.data.service.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,21 +16,21 @@ public class SpringDataApplication implements CommandLineRunner {
     private final CrudFuncionarioService crudFuncionarioService;
     private final CrudUnidadeTrabalhoService crudUnidadeTrabalhoService;
     private final RelatoriosService relatoriosService;
+    private final RelatorioFuncionarioDinamico relatorioFuncionarioDinamico;
     private Boolean system = true;
-
-
 
 
     //injeção de dependencia
     public SpringDataApplication(CrudCargoService crudCargoService,
                                  CrudFuncionarioService crudFuncionarioService,
                                  CrudUnidadeTrabalhoService crudUnidadeTrabalhoService,
-                                 RelatoriosService relatoriosService) {
+                                 RelatoriosService relatoriosService, RelatorioFuncionarioDinamico relatorioFuncionarioDinamico) {
 
         this.crudCargoService = crudCargoService;
         this.crudFuncionarioService = crudFuncionarioService;
         this.crudUnidadeTrabalhoService = crudUnidadeTrabalhoService;
         this.relatoriosService = relatoriosService;
+        this.relatorioFuncionarioDinamico = relatorioFuncionarioDinamico;
     }
 
     public static void main(String[] args) {
@@ -52,6 +49,8 @@ public class SpringDataApplication implements CommandLineRunner {
             System.out.println("2 - Funcionario");
             System.out.println("3 - Unidade de trabalho");
             System.out.println("4 - Relatorios");
+            System.out.println("5 - Relatorio dinamico");
+
 
             int action = scanner.nextInt();
 
@@ -64,6 +63,8 @@ public class SpringDataApplication implements CommandLineRunner {
                     this.crudUnidadeTrabalhoService.inicial(scanner);
                 case  4:
                     this.relatoriosService.inicial(scanner);
+                case 5:
+                    this.relatorioFuncionarioDinamico.inicial(scanner);
                 default:
                     system = false;
             }

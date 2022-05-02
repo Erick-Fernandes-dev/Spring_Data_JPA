@@ -94,6 +94,7 @@ public class RelatoriosService {
         funcionarios.forEach(System.out::println);
     }
 
+    //recebendo os get através da classe projecao
     private void pesquisaFuncionarioSalario() {
         List<FuncionarioProjecao> list = this.funcionarioRepository.findFuncionarioSalario();
         list.forEach(f -> System.out.println("Funcionario id: " + f.getId()
